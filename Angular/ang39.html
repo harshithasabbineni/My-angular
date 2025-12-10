@@ -1,0 +1,19 @@
+<table>
+<thead>
+<tr>
+ <th>Name</th>
+ <th>Type</th>
+ <th>price</th>
+</tr>
+</thead>
+<body>
+  @for (i of cars;track i.name)
+  {
+    <tr>
+      <td>{{i.name}}</td>
+      <td>{{i.type}}</td>
+      <td>{{i.price}}</td>
+    </tr>
+  }
+</body>
+</table>
