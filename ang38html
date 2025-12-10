@@ -1,0 +1,11 @@
+<ol>
+  @for (item of cars;track $index)
+  {
+    <li>{{$index}}:{{item}}</li>
+  }
+  @empty
+  {
+    <p>No cars found</p>
+  }
+</ol>
+<router-outlet></router-outlet>
