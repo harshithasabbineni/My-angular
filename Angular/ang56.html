@@ -1,0 +1,13 @@
+<table border="1">
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Price</th>
+  </tr>
+
+  <tr *ngFor="let car of (cars | sort:'price':true); let i = index">
+    <td>{{ car.name }}</td>
+    <td>{{ car.type }}</td>
+    <td>{{ car.price }}</td>
+  </tr>
+</table>
