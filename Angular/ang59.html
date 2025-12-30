@@ -1,0 +1,39 @@
+<form novalidate #loginform="ngForm">
+<div><label> Name:<input #name=ngModel type="text" required name="name"[(ngModel)]="login.name"></label>
+<span class="sucess"[hidden]="name.invalid">valid.Name</span>
+<span class="error"[hidden]="name.valid ||name.dirty">Enter Name</span>
+<span class="error"[hidden]="name.valid ||name.pristine">Enter Valid Name</span>
+</div>
+<div><label> Age:<input #age=ngModel type="number" min="18" max="25" required name="age"[(ngModel)]="login.age"></label>
+<span class="sucess"[hidden]="age.invalid">Valid Age</span>
+<span class="error"[hidden]="age.valid ||age.dirty">Enter age</span>
+<span class="error"[hidden]="age.valid ||age.pristine">Enter Valid age</span>
+</div>
+<div>
+  <label>
+    Password:
+    <input
+      type="password"
+      name="password"
+      required
+      pattern="\\w{8,12}"
+      [(ngModel)]="login.pass"
+      #pass="ngModel"
+    />
+  </label>
+
+  <span class="success" *ngIf="pass.valid && pass.touched">
+    Password Accepted
+  </span>
+
+  <span class="error" *ngIf="pass.invalid && pass.touched">
+    Enter Valid Password
+  </span>
+</div>
+
+<div>
+  <button [disabled]="loginform.invalid">Send</button>
+</div>
+
+</form>
+<router-outlet>
