@@ -1,0 +1,47 @@
+<form novalidate #loginform="ngForm" (ngSubmit)="onSubmit(loginform)">
+  <label>
+    Name:
+    <input type="text" required name="name" [(ngModel)]="model.name" />
+  </label>
+  <br />
+
+  <label>
+    Password:
+    <input type="password" required name="password" [(ngModel)]="model.password" />
+  </label>
+  <br />
+
+  Gender:
+  <label>
+    <input type="radio" required name="gender" value="f" [(ngModel)]="model.gender" />
+    : Female
+  </label>
+
+  <label>
+    <input type="radio" required name="gender" value="m" [(ngModel)]="model.gender" />
+    : Male
+  </label>
+  <br />
+
+  <label>
+    City:
+    <select required name="city" [(ngModel)]="model.city">
+      <option disabled selected value="">--Choose City--</option>
+      <option>New Delhi</option>
+      <option>Chennai</option>
+      <option>Mumbai</option>
+      <option>Kolkata</option>
+    </select>
+  </label>
+  <br />
+
+  <label>
+    <input type="checkbox" required name="terms" [(ngModel)]="model.terms" />
+    : Terms
+  </label>
+  <br />
+
+  <button type="submit" [disabled]="loginform.invalid">Send</button>
+  <button type="button" (click)="loginform.reset()">Reset</button>
+</form>
+<router-outlet></router-outlet>
