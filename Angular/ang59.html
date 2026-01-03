@@ -9,31 +9,16 @@
 <span class="error"[hidden]="age.valid ||age.dirty">Enter age</span>
 <span class="error"[hidden]="age.valid ||age.pristine">Enter Valid age</span>
 </div>
-<div>
-  <label>
-    Password:
-    <input
-      type="password"
-      name="password"
-      required
-      pattern="\\w{8,12}"
-      [(ngModel)]="login.pass"
-      #pass="ngModel"
-    />
-  </label>
-
-  <span class="success" *ngIf="pass.valid && pass.touched">
-    Password Accepted
-  </span>
-
-  <span class="error" *ngIf="pass.invalid && pass.touched">
-    Enter Valid Password
-  </span>
+<div><label>Password:<input #pass= ngModel type="password" pattern="\\w{8,12}"required name="password"[(ngModel)]="login.pass"></label>
+<span class="sucess"[hidden]="pass.invalid">Password Accepted</span>
+<span class="error"[hidden]="pass.valid ||pass.dirty">Enter Password</span>
+<span class="error"[hidden]="pass.valid ||pass.pristine">Invalid Password</span>
 </div>
-
-<div>
-  <button [disabled]="loginform.invalid">Send</button>
+<div><label> Email:<input #email=ngModel type="email" pattern="[\w]{1,}@[\w]{1,}\.[a-zA-Z]{2,}" required name="email"[(ngModel)]="login.email"></label>
+<span class="sucess"[hidden]="email.invalid">Valid Email</span>
+<span class="error"[hidden]="email.valid ||email.dirty">Enter Email</span>
+<span class="error"[hidden]="email.valid ||email.pristine">Enter Valid Email</span>
 </div>
-
+<div><button [disabled]="loginform.invalid">Send</button></div>
 </form>
-<router-outlet>
+<router-outlet></router-outlet>
