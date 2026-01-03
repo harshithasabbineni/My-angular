@@ -1,0 +1,10 @@
+<h1>{{title}}</h1>
+<form novalidate [formGroup]="loginform" (ngSubmit)="loginUser()">
+  <label>Email:<input type="email" name="email" formControlName="email"></label>
+  <label>Password:<input type="password" name="email" formControlName="pass"></label>
+<input type=button value="send">
+<p>{{loginform.value | json}}</p>
+<p>{{loginform.status}}</p>
+<p>{{loginform.valid}}</p>
+</form>
+<router-outlet></router-outlet>
