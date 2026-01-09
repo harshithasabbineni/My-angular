@@ -1,0 +1,7 @@
+<form novalidate[formGroup]="LoginForm">
+<label>Email:<input type="email"name="email"required formControlName="email"></label>
+<label>Password:<input type="password"name="pass" required formControlName="pass"></label>
+<p>{{LoginForm.value |json}}</p>
+<p>{{LoginForm.valid}}</p>
+</form>
+<router-outlet></router-outlet>
